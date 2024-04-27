@@ -1,0 +1,6 @@
+print("this is a test")
+first_name = input("what is first name: ")
+#print("first_name")
+last_name = input("what is your last name: ")
+age = int(input("what is your age: "))
+print(first_name, last_name)
