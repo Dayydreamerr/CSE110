@@ -1,0 +1,63 @@
+def main():
+    # Ask for input
+    child_price = float(input("Enter the price of a child's meal: $"))
+    adult_price = float(input("Enter the price of an adult's meal: $"))
+    num_children = int(input("Enter the number of children: "))
+    num_adults = int(input("Enter the number of adults: "))
+    drink_price = float(input("Enter the price of drinks: $"))
+    num_drinks = int(input("Enter the number of drinks: "))
+    appetizer_price = float(input("Enter the price of appetizers: $"))
+    num_appetizers = int(input("Enter the number of appetizers: "))
+    tax_rate = float(input("Enter the sales tax rate (in percentage): "))
+    tip_percentage = float(input("Enter the tip percentage (in percentage): "))
+
+    # Calculate subtotal
+    subtotal = (child_price * num_children) + (adult_price * num_adults) + \
+               (drink_price * num_drinks) + (appetizer_price * num_appetizers)
+
+    # Display subtotal
+    print(f"\nSubtotal: ${subtotal:.2f}")
+
+    # Calculate and display sales tax
+    sales_tax = subtotal * (tax_rate / 100)
+    print(f"Sales Tax: ${sales_tax:.2f}")
+
+    # Calculate total price
+    total_price = subtotal + sales_tax
+    print(f"Total: ${total_price:.2f}")
+
+    # Ask for payment amount
+    payment_amount = float(input("\nEnter the payment amount: $"))
+
+    # Calculate and display change
+    change = payment_amount - total_price
+    print(f"Change: ${change:.2f}")
+
+    # Additional features
+    if change < 0:
+        print("Warning: Insufficient payment!")
+    elif change == 0:
+        print("Exact payment received. Thank you!")
+    else:
+        print("Thank you for your payment. Enjoy your meal!")
+
+    if tip_percentage > 0:
+        tip_amount = total_price * (tip_percentage / 100)
+        print(f"Tip (${tip_percentage}%): ${tip_amount:.2f}")
+    else:
+        print("No tip provided.")
+
+    if num_children + num_adults > 0:
+        print("\nOrder Summary:")
+        if num_children > 0:
+            print(f"Children's Meals: {num_children} x ${child_price:.2f} = ${num_children * child_price:.2f}")
+        if num_adults > 0:
+            print(f"Adults's Meals: {num_adults} x ${adult_price:.2f} = ${num_adults * adult_price:.2f}")
+        if num_drinks > 0:
+            print(f"Drinks: {num_drinks} x ${drink_price:.2f} = ${num_drinks * drink_price:.2f}")
+        if num_appetizers > 0:
+            print(f"Appetizers: {num_appetizers} x ${appetizer_price:.2f} = ${num_appetizers * appetizer_price:.2f}")
+
+
+if __name__ == "__main__":
+    main()
