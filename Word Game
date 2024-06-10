@@ -1,0 +1,38 @@
+import random
+
+def generate_hint(secret_word, guess):
+    hint = []
+    for i in range(len(guess)):
+        if guess[i] == secret_word[i]:
+            hint.append(guess[i].upper())
+        elif guess[i] in secret_word:
+            hint.append(guess[i].lower())
+        else:
+            hint.append('_')
+    return ' '.join(hint)
+
+def word_guessing_game():
+    word_list = ["cat", "dog", "bat", "rat", "hat", "cow", "owl"]
+    secret_word = random.choice(word_list)
+    num_guesses = 0
+    print("Welcome to the word guessing game!")
+    print("Your hint is: " + ' '.join(['_'] * len(secret_word)))
+    
+    while True:
+        guess = input("What is your guess? ").strip().lower()
+        num_guesses += 1
+        
+        if len(guess) != len(secret_word):
+            print("Sorry, the guess must have the same number of letters as the secret word.")
+            continue
+        
+        if guess == secret_word:
+            print("Congratulations! You guessed it!")
+            break
+        else:
+            print("Your hint is: " + generate_hint(secret_word, guess))
+    
+    print(f"It took you {num_guesses} guesses.")
+
+# Start the game
+word_guessing_game()
