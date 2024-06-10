@@ -1,0 +1,113 @@
+def start_game():
+    print("Welcome to the Adventure Game!")
+    print("You find yourself at the entrance of a dark forest. You have three paths ahead.")
+    print("Do you want to go LEFT, RIGHT, or STRAIGHT?")
+    choice1 = input("> ").strip().upper()
+
+    if choice1 == "LEFT":
+        print("You walk down the left path and encounter a wild river. You see a boat and a bridge.")
+        print("Do you want to TAKE the boat or CROSS the bridge?")
+        choice2 = input("> ").strip().upper()
+
+        if choice2 == "TAKE":
+            print("You take the boat and start rowing across the river.")
+            print("Suddenly, you see a giant fish approaching. Do you want to FIGHT or ESCAPE?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "FIGHT":
+                print("You bravely fight the giant fish and manage to scare it away. You safely reach the other side.")
+                print("Congratulations, you completed the adventure successfully!")
+            elif choice3 == "ESCAPE":
+                print("You try to escape, but the fish catches up and capsizes the boat. You struggle and drown.")
+                print("Game Over.")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        elif choice2 == "CROSS":
+            print("You cross the bridge safely and find a treasure chest.")
+            print("Do you want to OPEN it or LEAVE it?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "OPEN":
+                print("You open the chest and find a treasure! Congratulations, you are rich!")
+            elif choice3 == "LEAVE":
+                print("You leave the chest and continue your journey. You find your way out of the forest.")
+                print("Congratulations, you completed the adventure safely!")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        else:
+            print("Invalid choice. Game Over.")
+
+    elif choice1 == "RIGHT":
+        print("You walk down the right path and find a sleeping dragon.")
+        print("Do you want to SNEAK past it or WAKE it up?")
+        choice2 = input("> ").strip().upper()
+
+        if choice2 == "SNEAK":
+            print("You sneak past the dragon and find a hidden cave.")
+            print("Do you want to EXPLORE the cave or CONTINUE walking?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "EXPLORE":
+                print("You explore the cave and find a hidden treasure! Congratulations, you are rich!")
+            elif choice3 == "CONTINUE":
+                print("You continue walking and find your way out of the forest.")
+                print("Congratulations, you completed the adventure safely!")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        elif choice2 == "WAKE":
+            print("You wake up the dragon and it gets angry.")
+            print("Do you want to RUN or FIGHT?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "RUN":
+                print("You run as fast as you can, but the dragon catches you. Game Over.")
+            elif choice3 == "FIGHT":
+                print("You fight bravely, but the dragon is too strong. You are defeated. Game Over.")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        else:
+            print("Invalid choice. Game Over.")
+
+    elif choice1 == "STRAIGHT":
+        print("You walk straight into the forest and find an abandoned cabin.")
+        print("Do you want to ENTER the cabin or IGNORE it?")
+        choice2 = input("> ").strip().upper()
+
+        if choice2 == "ENTER":
+            print("You enter the cabin and find a mysterious book.")
+            print("Do you want to READ the book or TAKE it with you?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "READ":
+                print("You read the book and gain magical powers! Congratulations, you are now a wizard!")
+            elif choice3 == "TAKE":
+                print("You take the book with you and continue your journey.")
+                print("Congratulations, you completed the adventure safely!")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        elif choice2 == "IGNORE":
+            print("You ignore the cabin and continue walking. You find a beautiful clearing.")
+            print("Do you want to REST or KEEP walking?")
+            choice3 = input("> ").strip().upper()
+
+            if choice3 == "REST":
+                print("You rest and regain your strength. Congratulations, you completed the adventure safely!")
+            elif choice3 == "KEEP":
+                print("You keep walking and eventually find your way out of the forest.")
+                print("Congratulations, you completed the adventure safely!")
+            else:
+                print("Invalid choice. Game Over.")
+        
+        else:
+            print("Invalid choice. Game Over.")
+
+    else:
+        print("Invalid choice. Game Over.")
+
+# Start the game
+start_game()
